@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>banner-案例二</title>
+  <style>
+    .banner {
+      height: 500px;
+      background: #f3f3f4 url(./images/bk.png) left bottom no-repeat;
+      text-align: right;
+      color: #333;
+    }
+    .banner h2 {
+      height: 100px;
+      font-size: 36px;
+      font-weight: 400;
+    }
+    .banner p {
+      font-size: 20px;
+    }
+    .banner a {
+      /* 这个链接一定要转换为行内块，才能像图片一样被父级的text-align: right影响 */
+      display: inline-block;
+      width: 125px;
+      height: 40px;
+      background-color: #f64077;
+      text-decoration: none;
+      line-height: 40px;
+      text-align: center;
+      color: #fff;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <h1>让创造产生价值</h1>
+    <p>我们希望小游戏平台可以提供无限的可能性，让每一个创作者都可以将他们的才华和创意传递给用户。</p>
+    <a href="#">我要报名</a>
+  </div>
+</body>
+</html>
