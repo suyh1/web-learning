@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>盒子模型</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      border: 3px solid #000;
+    }
+    /* 边框线-搜索框 */
+    /* 加padding */
+    input {
+      width: 487px;
+      height: 25px;
+      border: 2px solid #e2231a;
+      font-size: 14px;
+      padding-left: 1em;
+      /* 内减模式 */
+      box-sizing: border-box;
+    }
+    /* 单边框 */
+    .box2 {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #000;
+      border-top: 3px solid orange;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <br>
+  <input type="text" name="" id="" placeholder="微软平板">
+
+  <br>
+  <br>
+  <br>
+  <div class="box2"></div>
+</body>
+</html>

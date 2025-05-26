@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box::before {
+      /* 必需的属性 */
+      content: "我";
+      /* 行内元素，无法直接设置宽高，不过可以display */
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+    }
+    .box::after {
+      content: "subeipo";
+    }
+  </style>
+</head>
+<body>
+  <div class="box">是</div>
+</body>
+</html>

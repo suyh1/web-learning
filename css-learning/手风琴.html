@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片手风琴</title>
+  <style>
+    .title {
+      text-align: center;
+    }
+
+    .box {
+      display: flex;
+      overflow: hidden;
+      width: 1120px;
+      height: 260px;
+      margin: 50px auto;
+    }
+    .box>div {
+      width: 120px;
+      border: 1px solid #fff;
+      transition: all 0.5s;
+    }
+    .box>div:hover {
+      width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <h3 class="title">手风琴</h3>
+  <div class="box">
+    <!-- <div><img src="./image/1.jpg" alt=""></div>
+    <div><img src="./image/2.jpg" alt=""></div>
+    <div><img src="./image/3.jpg" alt=""></div>
+    <div><img src="./image/4.jpg" alt=""></div>
+    <div><img src="./image/5.jpg" alt=""></div>
+    <div><img src="./image/6.jpg" alt=""></div> -->
+    <script>
+    let arr = [
+      './image/1.jpg',
+      './image/2.jpg',
+      './image/3.jpg',
+      './image/4.jpg',
+      './image/5.jpg',
+      './image/6.jpg',
+      './image/7.jpg',
+    ]
+    let str = ''
+    for (let i = 0; i < arr.length; i++) {
+      str += `<div><img src="${arr[i]}" alt=""></div>`
+    }
+    document.write(str)
+  </script>
+  </div>
+
+  
+</body>
+</html>

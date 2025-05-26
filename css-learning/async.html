@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    li {
+      list-style: none;
+    }
+  </style>
+</head>
+<body>
+  <ul class="weather"></ul>
+  
+  <script src="./lib/axios.min.js"></script>
+  <script>
+    async function render(){
+      const {data:{list:plist}} = await axios({url: 'http://hmajax.itheima.net/api/province'})        
+      console.log(plist[0])
+      const {data:{list:clist}} = await axios({url: 'http://hmajax.itheima.net/api/city', params:{pname: plist[0]}})
+      console.log(clist[0])
+      const {data:{list:alist}} = await axios({url: 'http://hmajax.itheima.net/api/area', params:{pname: plist[0], cname: clist[0]}})
+      console.log(alist[0])
+    }
+    render()
+
+    const arr = []
+    arr.push(
+      axios({url:'http://hmajax.itheima.net/api/weather', params:{city:'110100'}}),
+      axios({url:'http://hmajax.itheima.net/api/weather', params:{city:'310100'}}),
+      axios({url:'http://hmajax.itheima.net/api/weather', params:{city:'440100'}}),
+      axios({url:'http://hmajax.itheima.net/api/weather', params:{city:'440300'}})
+    )
+    async function getWeather(){
+      try {
+        const res = await Promise.all(arr)
+        document.querySelector('.weather').innerHTML = res.map(city=>{
+          const {data:{data:{area, dateShort, psPm25Level}}} = city
+          return `<li>${dateShort}---${area}---${psPm25Level}</li>`
+        }).join('')
+      } catch (error) {
+        console.log(error) 
+      }
+    }
+    getWeather()
+
+  </script>
+</body>
+</html>
