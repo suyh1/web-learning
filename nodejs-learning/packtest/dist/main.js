@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("kakaxi123".length>=8)})();
