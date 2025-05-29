@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 1. 准备一个容器 -->
+  <div id="app">
+    <p>姓名：{{uname}}</p>
+    <p>年龄：{{age}}</p>
+    <p>朋友的姓名：{{friend.fname}}</p>
+    <p>朋友的性别：{{friend.sex}}</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: '#app', // 指定数据展示的元素
+      data: {
+        // 要展示的数据
+        uname: 'good',
+        age: 18,
+        friend: {
+          sex: '男',
+          fname: 'friend'
+        }
+      }
+    })
+  </script>
+</body>
+</html>

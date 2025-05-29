@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1 {
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+    }
+    .box2 {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="box1" v-if="num>=90 && num<=100">等级A</div>
+    <div class="box1" v-else-if="num<90 && num>=80">等级B</div>
+    <div class="box1" v-else-if="num<80 && num>=70">等级C</div>
+    <div class="box1" v-else>等级D</div>
+    <div class="box2" v-show="showFlag">我是v-show控制的盒子</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: '#app',
+      data: {
+        ifFlag: true,
+        showFlag: true,
+        num: 95
+      }
+    })
+  </script>
+</body>
+</html>
